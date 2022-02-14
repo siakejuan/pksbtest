@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="pksbtest_RequestStorageLine" name="requestStorageLine-view" extends="_local">
+        <property name="container" view="_minimal">
+            <property name="containerType"/>
+            <property name="status"/>
+        </property>
+    </view>
+    <view entity="pksbtest_RequestStorageLine" name="requestLoadingCablingLine-view">
+        <property name="containerNumber"/>
+        <property name="container" view="_minimal">
+            <property name="containerType"/>
+        </property>
+        <property name="temperature"/>
+        <property name="location"/>
+        <property name="temperatureStart"/>
+        <property name="remarks"/>
+        <property name="cablingRequired"/>
+    </view>
+    <view entity="pksbtest_RequestStorageLine" name="requestHousekeepingCleaningStuffingLine-view">
+        <property name="containerNumber"/>
+        <property name="housekeepingRequired"/>
+        <property name="cleaningRequired"/>
+        <property name="stuffingRequired"/>
+        <property name="container" view="_minimal">
+            <property name="containerType"/>
+        </property>
+        <property name="remarks"/>
+    </view>
+    <view entity="pksbtest_RequestStorageLine" name="requestPlugOnOffLine-view">
+        <property name="containerNumber"/>
+        <property name="container" view="_minimal">
+            <property name="containerType"/>
+        </property>
+        <property name="remarks"/>
+        <property name="plugOn"/>
+        <property name="plugOff"/>
+    </view>
+    <view entity="pksbtest_RequestStorageLine" name="requestRepairLine-view">
+        <property name="containerNumber"/>
+        <property name="repair"/>
+        <property name="container" view="_minimal">
+            <property name="containerType"/>
+        </property>
+    </view>
+</views>

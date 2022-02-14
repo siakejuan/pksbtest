@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://requestLoadingCablingLineEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.pksbtest.web.screens.requeststorageline">
+    <data>
+        <instance id="requestStorageLineDc"
+                  class="com.company.pksbtest.entity.RequestStorageLine">
+            <view extends="requestLoadingCablingLine-view"/>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="requestStorageLineDc">
+            <column width="350px">
+                <textField id="locationField" property="location"/>
+                <optionsGroup id="containerTypeField" property="container.containerType"/>
+                <textField id="containerNumberField" property="container.containerNumber"/>
+<!--                <pickerField id="containerField" property="container">-->
+<!--                    <actions>-->
+<!--                        <action id="lookup" type="picker_lookup"/>-->
+<!--                        <action id="clear" type="picker_clear"/>-->
+<!--                    </actions>-->
+<!--                </pickerField>-->
+                <checkBox id="cablingField" property="cablingRequired"/>
+                <textField id="temperatureField" property="temperature"/>
+                <textField id="temperatureStartField" property="temperatureStart"/>
+                <textField id="remarksField" property="remarks"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

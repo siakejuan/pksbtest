@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="pksbtest" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.company.pksbtest.entity.RequestStorage</class>
+        <class>com.company.pksbtest.entity.RequestStorageLine</class>
+        <class>com.company.pksbtest.entity.RequestPlugOnOff</class>
+        <class>com.company.pksbtest.entity.Container</class>
+        <class>com.company.pksbtest.entity.RequestRepair</class>
+        <class>com.company.pksbtest.entity.RequestLoadingCabling</class>
+        <class>com.company.pksbtest.entity.RequestHousekeepingCleaningStuffing</class>
+        <class>com.company.pksbtest.entity.Request</class>
+    </persistence-unit>
+</persistence>

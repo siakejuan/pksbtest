@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://requestRepairBrowse.caption"
+        focusComponent="requestRepairsTable"
+        messagesPack="com.company.pksbtest.web.screens.requestrepair">
+    <data readOnly="true">
+        <collection id="requestRepairsDc"
+                    class="com.company.pksbtest.entity.RequestRepair">
+            <view extends="_local"/>
+            <loader id="requestRepairsDl">
+                <query>
+                    <![CDATA[select e from pksbtest_RequestRepair e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="requestRepairsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="requestRepairsTable"
+                dataLoader="requestRepairsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="requestRepairsTable"
+                    width="100%"
+                    dataContainer="requestRepairsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="customer"/>
+                <column id="date"/>
+                <column id="location"/>
+                <column id="ticketNumber"/>
+                <column id="status"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="requestRepairsTable.create"/>
+                <button id="editBtn" action="requestRepairsTable.edit"/>
+                <button id="removeBtn" action="requestRepairsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

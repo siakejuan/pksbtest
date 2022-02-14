@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-pksbtest" insertBefore="administration" caption="mainMsg://menu_config.application-pksbtest">
+        <item screen="pksbtest_RequestStorage.browse" caption="mainMsg://menu_config.pksbtest_RequestStorage.browse"/>
+        <item screen="pksbtest_RequestPlugOnOff.browse"
+              caption="mainMsg://menu_config.pksbtest_RequestPlugOnOff.browse"/>
+        <item screen="pksbtest_RequestRepair.browse" caption="mainMsg://menu_config.pksbtest_RequestRepair.browse"/>
+        <item screen="pksbtest_RequestLoadingCabling.browse"
+              caption="mainMsg://menu_config.pksbtest_RequestLoadingCabling.browse"/>
+        <item screen="pksbtest_RequestHousekeepingCleaningStuffing.browse"
+              caption="mainMsg://menu_config.pksbtest_RequestHousekeepingCleaningStuffing.browse"/>
+    </menu>
+</menu-config>

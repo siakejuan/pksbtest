@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://requestHousekeepingCleaningStuffingEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.pksbtest.web.screens.requesthousekeepingcleaningstuffing">
+    <data>
+        <instance id="requestHousekeepingCleaningStuffingDc"
+                  class="com.company.pksbtest.entity.RequestHousekeepingCleaningStuffing">
+            <view extends="_local">
+                <property name="requestStorageLine" view="requestHousekeepingCleaningStuffingLine-view"/>
+            </view>
+            <loader/>
+            <collection id="requestStorageLineDc" property="requestStorageLine"/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="requestHousekeepingCleaningStuffingDc">
+            <column width="350px">
+                <textField id="customerField" property="customer"/>
+                <dateField id="dateField" property="date"/>
+                <textField id="locationField" property="location"/>
+                <textField id="ticketNumberField" property="ticketNumber"/>
+                <textField id="statusField" property="status"/>
+            </column>
+        </form>
+        <groupBox id="requestStorageLineBox"
+                  caption="msg://requestHousekeeping.caption">
+            <table id="requestStorageLineTable" dataContainer="requestStorageLineDc" width="100%" height="200px">
+                <actions>
+                    <action id="create" type="create">
+                        <properties>
+                            <property name="screenClass"
+                                      value="com.company.pksbtest.web.screens.requeststorageline.RequestHousekeepingLineEdit"/>
+                        </properties>
+                    </action>
+                    <action id="edit" type="edit">
+                        <properties>
+                            <property name="screenClass"
+                                      value="com.company.pksbtest.web.screens.requeststorageline.RequestHousekeepingLineEdit"/>
+                        </properties>
+                    </action>
+                    <action id="remove" type="remove"/>
+                </actions>
+                <columns>
+                    <column id="containerNumber"/>
+                    <column id="housekeepingRequired"/>
+                    <column id="cleaningRequired"/>
+                    <column id="stuffingRequired"/>
+<!--                    <column id="container"/>-->
+                    <column id="remarks"/>
+                </columns>
+                <buttonsPanel>
+                    <button action="requestStorageLineTable.create" caption="mainMsg://addButton"/>
+                    <button action="requestStorageLineTable.edit"/>
+                    <button action="requestStorageLineTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
